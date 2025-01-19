@@ -127,7 +127,7 @@ h6{font-size: 10px; text-transform: uppercase; letter-spacing: 4px;}
 
 /**************************** Tabs **************************/
 #tabs{display:block;}
-.tabs{padding-top:50px;padding-bottom:50px;}
+.tabs{padding-top:60px;padding-bottom:60px;}
 .tabs h4{font-weight:500;margin:10px 0 20px;}
 .tabs .active{display:block!important;}
 .tabs .tab{display:none;}
