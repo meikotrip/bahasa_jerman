@@ -75,7 +75,8 @@ body.blog-sidebar  #header:after{height: 31%;}
 .travel .header ul li{margin: 0 45px;}
 .header ul li a{color:#000;text-decoration:none;-webkit-transition:all linear .2s;-moz-transition:all linear .2s;-o-transition:all linear .2s;transition:all linear .2s;-ms-transition:all linear .2s;}
 .header .logo{height:150px;width:auto;}
-.logo h3{margin:15px 0 0;}
+.logo h3{margin:30px 0 0;}
+.logo h5{margin: 10px 0 20px;}
 .logo h6{margin:15px 0 0;}
 
 .scroll_menu{background-color:#eff0ea;position:fixed;top:0;left:0;z-index:1000;width:100%;height:90px;box-shadow:0 1px 4px 2px rgba(175,175,161,1);display:none;-webkit-transform: translateZ(0);-o-transform: translateZ(0);-ms-transform: translateZ(0);-moz-transform: translateZ(0);transform: translateZ(0);}
@@ -99,7 +100,7 @@ body.blog-sidebar #header.small_scene .header.scroll_menu{padding-bottom:0px;}
 .headline span{color:#a9aa81;font-size:14px;width:120px;display:inline-block;vertical-align:top;}
 .headline span.numder{font-size:36px;width:auto;margin-right:10px;line-height:30px;position:relative;font-weight:700;}
 .headline span.numder::before{content:'....................';color:#a9aa81;font-size:36px;position:absolute;top:10px;right:0;font-weight:400;}
-.header ul li a:hover,.headline a:hover span,.headline a:hover span.numder::before{color:#ffce00;}
+/* .header ul li a:hover,.headline a:hover span,.headline a:hover span.numder::before{color:red;} */
 
 .more_arrow{color:#fff;border:3px solid #fff;border-radius:50%;height:45px;width:45px;font-size:20px;display:inline-table;margin:100px auto auto;}
 .more_arrow span{vertical-align:middle;display:table-cell;}
@@ -126,7 +127,7 @@ h6{font-size: 10px; text-transform: uppercase; letter-spacing: 4px;}
 
 /**************************** Tabs **************************/
 #tabs{display:block;}
-.tabs{padding-top:150px;padding-bottom:150px;}
+.tabs{padding-top:50px;padding-bottom:50px;}
 .tabs h4{font-weight:500;margin:10px 0 20px;}
 .tabs .active{display:block!important;}
 .tabs .tab{display:none;}
@@ -282,9 +283,9 @@ h6{font-size: 10px; text-transform: uppercase; letter-spacing: 4px;}
 
 /**************************** Section "About"  **************************/
 #about{padding:100px 0;}
-#about .item{-webkit-transition:all linear .2s;-moz-transition:all linear .2s;-ms-transition:all linear .2s;-o-transition:all linear .2s;transition:all linear .2s;width:150px;height:150px;background-color:#fff;border-radius:50%;display:inline-block;vertical-align:middle;}
+#about .item{-webkit-transition:all linear .2s;-moz-transition:all linear .2s;-ms-transition:all linear .2s;-o-transition:all linear .2s;transition:all linear .2s;width:175px;height:175px;background-color:#fff;border-radius:50%;display:inline-block;vertical-align:middle;}
 #about .item:hover{transform:scale(1.2);-ms-transform:scale(1.2);-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-o-transform:scale(1.2);}
-#about .arrow{width:56px;height:43px;background-image:url(../images/arrow.png);background-size:100%;background-repeat:no-repeat;display:inline-block;vertical-align:middle;margin:0 43px;}
+#about .arrow{width:45px;height:45px;background-image:url(../images/arrow.png);background-size:100%;background-repeat:no-repeat;display:inline-block;vertical-align:middle;margin:0 43px;}
 #about .item img{width:50px;margin-top:45px;}
 #about .item span{color:#000;font-size:16px;display:block;}
 #about.eco .item{background-color: transparent;}
@@ -352,8 +353,8 @@ ul{list-style:none;margin:0;padding:0;}
 .post_sdb .info a{color:#000;margin-right:25px;-webkit-transition:all linear .2s;-moz-transition:all linear .2s;-o-transition:all linear .2s;transition:all linear .2s;-ms-transition:all linear .2s;}
 .post_sdb .info a:hover{color:#5ea281;}
 .post_sdb .text{font-size:14px;color:#8b8b8b;font-weight:400;line-height:20px;word-spacing:2px;}
-.post_sdb .sharing ul{padding:0;}
-.post_sdb .sharing ul li{display:inline-block;margin-right:10px;cursor:pointer;-webkit-transition:all linear .05s;-moz-transition:all linear.05s;-o-transition:all linear.05s;transition:all linear .05s;-ms-transition:all linear.05s;}
+.post_sdb .sharing ul{display: flex; flex-wrap: wrap; justify-content: space-around; padding:0;}
+.post_sdb .sharing ul li{text-align: center; width: 200px; margin:20px 10px;cursor:pointer;-webkit-transition:all linear .05s;-moz-transition:all linear.05s;-o-transition:all linear.05s;transition:all linear .05s;-ms-transition:all linear.05s;}
 .post_sdb .sharing ul li:hover{transform:scale(1.05);-ms-transform:scale(1.05);-webkit-transform:scale(1.05);-moz-transform:scale(1.05);-o-transform:scale(1.05);}
 .post_sdb .sharing ul li:hover span{box-shadow:1px 2px 0 1px rgba(175,175,161,0.8);}
 .post_sdb .sharing ul li span{font-size:14px;color:#000;font-weight:700;background-color:#e6e7d2;vertical-align:middle;border-radius:0 5px 5px 0;-webkit-transition:all linear .2s;-moz-transition:all linear .2s;-o-transition:all linear .2s;transition:all linear .2s;-ms-transition:all linear .2s; padding:10px;}
