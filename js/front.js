@@ -203,7 +203,16 @@ jQuery(window).load(function () {
         jQuery('.active').removeClass('active');
         jQuery(this).addClass('active');
         jQuery('.tabs .tab.active').removeClass('active');
-        jQuery('.tabs').find('.tab:nth-child(' + index + ')').addClass('active');
+        // jQuery('.tabs').find('.tab:nth-child(' + index + ')').addClass('active');
+        var targetTab = jQuery('.tabs').find('.tab:nth-child(' + index + ')');
+        targetTab.addClass('active');
+
+        // Jika tab yang aktif berisi peta, panggil invalidateSize
+        if (targetTab.find('#map').length) {
+            setTimeout(function () {
+                map.invalidateSize();
+            }, 300); // Tambahkan sedikit delay untuk memastikan transisi selesai
+        }
     });
 
     jQuery('.video_thumb').each(function () {
