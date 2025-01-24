@@ -49,9 +49,9 @@ br{display:none;}
 .header{padding-bottom:83px;}
 .header ul li{margin:0 20px;}
 .more_arrow{margin:60px auto auto;}
-.post_sdb .sharing ul li{margin:auto;}
+/* .post_sdb .sharing ul li{margin:auto;}
 .post_sdb .sharing ul li span.icon{font-size:15px;}
-.post_sdb .sharing ul li span{font-size:13px;}
+.post_sdb .sharing ul li span{font-size:13px;} */
 .post_sdb .more a{padding:15px 30px;}
 .post .team.square .item .image, .post .team.circle .item .image{width:200px;height:200px;}
 .tabs .columns_2 .item{margin-top:0;}
@@ -180,7 +180,7 @@ h6{font-size:10px; letter-spacing: 2px;}
 .team.square,.team.circle{display:block;width:100%;text-align:center;}
 .team.square .item,.team.circle .item{margin-top:30px!important;}
 #post_sdb .image{width:70%;margin-bottom:30px;}
-.post_sdb .sharing ul li{margin-bottom:30px;}
+/* .post_sdb .sharing ul li{margin-bottom:30px;} */
 .skills_row{margin:0 10px;}
 .widget_skills .skills_row img{height:130%;margin-top:-30px;}
 .widget_skills .skills_row .name{font-size:30px;font-weight:400;}

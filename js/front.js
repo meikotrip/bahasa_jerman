@@ -215,6 +215,20 @@ jQuery(window).load(function () {
         }
     });
 
+    jQuery('a[href="#map-landkarte"]').click(function(e) {
+        e.preventDefault();
+        
+        jQuery('.active').removeClass('active');
+        jQuery('#map-landkarte').addClass('active');
+        
+        // Jika tab yang aktif berisi peta, panggil invalidateSize
+        if (jQuery('#map-landkarte').find('#map').length) {
+            setTimeout(function () {
+                map.invalidateSize();
+            }, 300); // Tambahkan sedikit delay untuk memastikan transisi selesai
+        }
+    });
+
     jQuery('.video_thumb').each(function () {
         var frame_code = jQuery(this).attr('data-frame');
         jQuery(this).html('<iframe width="100%" height="100%" class="video_frame" src="' + frame_code + '"  frameborder="0" webkitAllowFullScreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowFullScreen="allowFullScreen"></iframe>');
