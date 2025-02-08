@@ -197,23 +197,64 @@ jQuery(window).load(function () {
         });
     });
 
+    // Handle tab switching for both tabs_name clicks and next/previous buttons
     jQuery('.tabs_name li').click(function () {
-        var index = jQuery(this).index() + 1;
+        switchTab(jQuery(this).index() + 1);
+    });
 
+    // Handle next button click
+    jQuery('.next-button').click(function() {
+        var currentIndex = jQuery('.tabs_name li.active').index();
+        var totalTabs = jQuery('.tabs_name li').length;
+        var nextIndex = (currentIndex + 1) % totalTabs; // Wrap around to first tab if at end
+        switchTab(nextIndex + 1);
+    });
+
+    // Handle previous button click
+    jQuery('.prev-button').click(function() {
+        var currentIndex = jQuery('.tabs_name li.active').index();
+        var totalTabs = jQuery('.tabs_name li').length;
+        var prevIndex = (currentIndex - 1 + totalTabs) % totalTabs; // Wrap around to last tab if at start
+        switchTab(prevIndex + 1);
+    });
+
+    // Function to switch tabs
+    function switchTab(index) {
+        // Remove active class from all tabs and navigation items
         jQuery('.active').removeClass('active');
-        jQuery(this).addClass('active');
-        jQuery('.tabs .tab.active').removeClass('active');
-        // jQuery('.tabs').find('.tab:nth-child(' + index + ')').addClass('active');
+        
+        // Add active class to selected navigation item
+        jQuery('.tabs_name li:nth-child(' + index + ')').addClass('active');
+        
+        // Find and activate the target tab
         var targetTab = jQuery('.tabs').find('.tab:nth-child(' + index + ')');
         targetTab.addClass('active');
-
-        // Jika tab yang aktif berisi peta, panggil invalidateSize
+        
+        // Check if active tab contains map and refresh it if necessary
         if (targetTab.find('#map').length) {
             setTimeout(function () {
                 map.invalidateSize();
-            }, 300); // Tambahkan sedikit delay untuk memastikan transisi selesai
+            }, 300);
         }
-    });
+    }
+
+    // jQuery('.tabs_name li').click(function () {
+    //     var index = jQuery(this).index() + 1;
+
+    //     jQuery('.active').removeClass('active');
+    //     jQuery(this).addClass('active');
+    //     jQuery('.tabs .tab.active').removeClass('active');
+    //     // jQuery('.tabs').find('.tab:nth-child(' + index + ')').addClass('active');
+    //     var targetTab = jQuery('.tabs').find('.tab:nth-child(' + index + ')');
+    //     targetTab.addClass('active');
+
+    //     // Jika tab yang aktif berisi peta, panggil invalidateSize
+    //     if (targetTab.find('#map').length) {
+    //         setTimeout(function () {
+    //             map.invalidateSize();
+    //         }, 300); // Tambahkan sedikit delay untuk memastikan transisi selesai
+    //     }
+    // });
 
     jQuery('a[href="#map-landkarte"]').click(function(e) {
         e.preventDefault();
