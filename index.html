@@ -250,7 +250,6 @@
             </section>
         </div>
         <script type="text/javascript" src="js/jquery.min.js"></script> 
-        <script type="text/javascript" src="js/Chart.min.js"></script> 
         <script type="text/javascript" src="js/jquery.flexslider.min.js"></script>
         <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
         <script type="text/javascript" src="js/SmoothScroll.js"></script>
@@ -274,10 +273,22 @@
         <script>
             // Objek deskripsi negara bagian (diambil dari luar GeoJSON)
             const descriptions = {
-                "Berlin": "Berlin adalah ibu kota Jerman dan salah satu dari 16 negara bagian.",
-                "Hamburg": "Hamburg adalah kota pelabuhan terbesar di Jerman.",
-                "Saarland": "Saarland terletak di barat daya Jerman, berbatasan dengan Prancis.",
-                // Tambahkan deskripsi lainnya di sini...
+                "Berlin": "<strong>Brandenburger Tor</strong> adalah landmark bersejarah Berlin yang dibangun pada abad ke-18 dalam gaya Neoklasik. Selama Perang Dingin, gerbang ini menjadi simbol pemisahan Jerman barat dan Jerman timur akibat Tembok Berlin. Setelah reunifikasi Jerman pada 1990, Brandenburger Tor melambangkan persatuan dan kebebasan, serta menjadi destinasi wisata utama di Berlin.",
+                "Hamburg": "<strong>Elbphilharmonie</strong>, Gedung konser megah ini terletak di tepi Sungai Elbe dan memiliki arsitektur modern dengan atap bergelombang menyerupai ombak. Dibuka pada 2017, Elbphilharmonie menjadi simbol baru Hamburg sebagai kota budaya dan musik.",
+                "Saarland": "<strong>Völklinger Hütte</strong>, sebuah bekas pabrik baja yang sekarang menjadi Situs Warisan Dunia UNESCO. Pabrik ini adalah salah satu kompleks industri pertama di dunia yang dilestarikan sebagai warisan budaya dan menjadi simbol sejarah industri baja di Eropa. Kini, Völklinger Hütte berfungsi sebagai museum dan pusat seni budaya.",
+                "Bayern": "<strong>Marienplatz & Neues Rathaus</strong> adalah ikon paling terkenal di München. Marienplatz merupakan alun-alun utama kota yang menjadi pusat aktivitas sejak abad pertengahan. Balai Kota Baru (Neues Rathaus) yang berdiri megah bergaya Neo-Gotik menampilkan jam Glockenspiel, sebuah pertunjukan boneka mekanik yang menceritakan sejarah Bavaria. Tempat ini menjadi daya tarik utama bagi wisatawan dan simbol budaya München.",
+                "Baden-Württemberg": "<strong>Stuttgart</strong>, ibu kota negara bagian Baden-Württemberg, Jerman, dikenal sebagai kota otomotif. Stuttgart menjadi ikon negara bagian Baden-Württemberg karena menjadi pusat industri otomotif dunia.",
+                "Bremen": "<strong>Bremen Stadtmusikanten</strong>, Patung ini menggambarkan keledai, anjing, kucing, dan ayam dari dongeng Grimm yang terkenal. Terletak di dekat Balai Kota Bremen, patung ini menjadi simbol kota dan daya tarik utama bagi wisatawan yang berkunjung ke Bremen.",
+                "Brandenburg": "<strong>Istana Sanssouci</strong>, adalah istana bergaya Rococo di Potsdam, Jerman, yang dibangun pada abad ke-18 sebagai tempat peristirahatan Raja Prusia, Frederick II (Frederick the Great). Nama Sanssouci berarti 'tanpa kekhawatiran' mencerminkan fungsinya sebagai tempat bersantai jauh dari kehidupan politik Berlin. Istana ini dikelilingi oleh Taman Sanssouci, dengan teras anggur, air mancur, dan paviliun indah, menjadikannya salah satu situs warisan dunia UNESCO yang paling terkenal di Jerman.",
+                "Hessen": "<strong>Kurhaus Wiesbaden</strong> adalah ikon paling terkenal di Wiesbaden, ibu kota Hessen. Dibangun pada awal abad ke-20 dalam gaya Neoklasik, gedung ini berfungsi sebagai pusat spa, kasino, dan acara budaya. Kurhaus terkenal dengan arsitektur megahnya serta Kasino Wiesbaden, salah satu kasino tertua dan paling bergengsi di Eropa. Selain itu, taman Kurpark yang mengelilinginya menambah daya tarik sebagai destinasi wisata utama di Wiesbaden.",
+                "Niedersachsen": "<strong>Neues Rathaus</strong> atau Balai Kota Baru adalah ikon paling terkenal di Hannover. Dibangun pada awal abad ke-20 dalam gaya historisme, bangunan megah ini memiliki kubah besar setinggi 100 meter yang dapat dinaiki dengan lift unik melengkung. Dari puncaknya, pengunjung bisa menikmati panorama kota Hannover. Neues Rathaus juga menjadi simbol pemerintahan dan sejarah kota.",
+                "Mecklenburg-Vorpommern": "<strong>Schweriner Schloss</strong> Istana ini berdiri di sebuah pulau di Danau Schwerin, memiliki arsitektur bergaya Neo-Renaisans dan sering disebut sebagai 'Neuschwanstein Utara' karena keindahannya. Sekarang istana ini menjadi gedung parlemen negara bagian Mecklenburg-Vorpommern. Dikelilingi taman yang indah, Schweriner Schloss menjadi simbol sejarah, budaya, dan keindahan arsitektur kota Schwerin.",
+                "Nordrhein-Westfalen": "<strong>Kölner Dom</strong> atau Katedral Köln merupakan gereja bergaya Gotik terbesar di Jerman dan salah satu yang tertinggi di dunia, dengan menara kembar setinggi 157 meter. Dibangun selama lebih dari 600 tahun, Kölner Dom menjadi Situs Warisan Dunia UNESCO dan rumah bagi relikui Tiga Raja yang sangat dihormati.",
+                "Rheinland-Pfalz": "<strong>Burg Eltz</strong>, Kastil abad pertengahan ini terletak di tengah hutan dan telah bertahan lebih dari 850 tahun tanpa pernah dihancurkan. Arsitektur khasnya yang megah, lokasinya yang tersembunyi, serta interiornya yang masih asli menjadikannya salah satu kastil paling indah dan ikonik di Jerman.",
+                "Sachsen": "<strong>Frauenkirche Dresden</strong>, Gereja bergaya Barok ini merupakan simbol kebangkitan Dresden setelah Perang Dunia II, di mana bangunannya hancur total akibat pengeboman tahun 1945. Setelah reunifikasi Jerman, gereja ini dipugar dan kembali berdiri megah, menjadi salah satu landmark paling terkenal di Jerman.",
+                "Sachsen-Anhalt": "<strong>Magdeburger Dom</strong>, Katedral ini merupakan katedral Gotik pertama di Jerman dan menjadi makam Kaisar Otto I, kaisar pertama Kekaisaran Romawi Suci. Dengan arsitektur megah dan sejarah panjangnya, katedral ini menjadi simbol penting bagi kota Magdeburg dan negara bagian Sachsen-Anhalt.",
+                "Schleswig-Holstein": "<strong>Holstentor</strong> di Lübeck. Gerbang kota bergaya Gotik dari abad ke-15 ini merupakan simbol sejarah Lübeck sebagai pusat perdagangan Liga Hanseatic. Dengan dua menara khasnya, Holstentor menjadi ikon utama Schleswig-Holstein.",
+                "Thüringen": "<strong>Wartburg</strong>, Kastil ini memiliki sejarah panjang dan terkenal sebagai tempat Martin Luther menerjemahkan Perjanjian Baru ke dalam bahasa Jerman pada abad ke-16. Terletak di atas bukit di kota Eisenach, Wartburg diakui sebagai Situs Warisan Dunia UNESCO dan menjadi simbol penting sejarah dan budaya Jerman."
             };
 
             // Inisialisasi peta
@@ -385,8 +396,8 @@
                                 var tooltipContent = `
                                     <div class="custom-tooltip">
                                         <img src="${imagePath}" alt="${feature.properties.name}" class="tooltip-image">
-                                        <p><strong>${feature.properties.name}</strong></p>
-                                        <p>${description}</p>
+                                        <h5 style="font-family: 'Londrina Solid', serif; margin:10px 0"><strong>${feature.properties.name}</strong></h5>
+                                        <p style="text-align: justify">${description}</p>
                                     </div>
                                 `;
 
@@ -394,7 +405,7 @@
                                 layer.bindTooltip(tooltipContent, {
                                     permanent: false, // Tooltip muncul saat hover
                                     direction: "top", // Posisi tooltip di atas field
-                                    opacity: 0.8,
+                                    opacity: 1,
                                     interactive: true,
                                     sticky: true
                                 });
